@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+-->
+<html>
+	<head>
+		<title>Demarcus Simmons - Contact</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+		<script>
+			function getEmail() {
+				var name = document.getElementById("demo-name").value;
+				var email = document.getElementById("demo-email").value;
+				var subject = document.getElementById("demo-category").value;
+				var message = document.getElementById("demo-message").value;
+				var body = "Name: " + name + "%0D%0AEmail: " + email + "%0D%0ASubject: " + subject + "%0D%0AMessage: " + message;
+				return {"name": name, "email": email, "subject": subject, "message": message, "body": body};
+			}
+
+			function sendEmail() {
+				let mail = getEmail();
+				Email.send({
+					Host : "smtp.gmail.com",
+					Username : "marcussimmons13@gmail.com",
+					Password : "GhostMail9",
+					To : 'marcussimmons13@gmail.com',
+					From : mail["name"],
+					Subject : mail["category"],
+					Body : mail["body"]
+				}).then(
+				message => alert(message)
+				);
+			}
+		</script>
+		<script src="assets/js/mail.js">
+		</script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Contact</h1>
+						<p>Get in touch</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+									<form method="post" onsubmit="sendEmail()">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<select name="demo-category" id="demo-category">
+													<option value="">- Category -</option>
+													<option value="1">Hiring</option>
+													<option value="1">Other</option>
+												</select>
+											</div>
+											<div class="col-12">
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Send Message" class="primary" /></li>
+													<li><input type="reset" value="Reset" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Contact</h2>
+							<dl class="alt">
+								<dt>Address</dt>
+								<dd>1234 Somewhere Road &bull; Pensacola, FL 32502 &bull; USA</dd>
+								<dt>Email</dt>
+								<dd><a href="#">marcussimmons13@gmail.com</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="https://github.com/dmarc2" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/marcus-simmons-670871183/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Demarcus Simmons - Portfolio</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
