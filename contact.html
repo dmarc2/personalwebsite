@@ -21,13 +21,13 @@
 			function sendEmail() {
 				let mail = getEmail();
 				Email.send({
-					Host : "smtp.gmail.com",
+					SecureToken : "fdf390c2-e2a4-46b2-8fb0-10809c72b71d",
 					To : 'marcussimmons13@gmail.com',
-					From : mail["name"],
+					From : mail["email"],
 					Subject : mail["category"],
 					Body : mail["body"]
 				}).then(
-				message => alert(message)
+					message => alert(message)
 				);
 			}
 		</script>
