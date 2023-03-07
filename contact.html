@@ -8,29 +8,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://smtpjs.com/v3/smtp.js"></script>
-		<script>
-			function getEmail() {
-				var name = document.getElementById("demo-name").value;
-				var email = document.getElementById("demo-email").value;
-				var subject = document.getElementById("demo-category").value;
-				var message = document.getElementById("demo-message").value;
-				var body = "Name: " + name + "%0D%0AEmail: " + email + "%0D%0ASubject: " + subject + "%0D%0AMessage: " + message;
-				return {"name": name, "email": email, "subject": subject, "message": message, "body": body};
-			}
-
-			function sendEmail() {
-				let mail = getEmail();
-				Email.send({
-					SecureToken : "fdf390c2-e2a4-46b2-8fb0-10809c72b71d",
-					To : 'marcussimmons13@gmail.com',
-					From : mail["email"],
-					Subject : mail["category"],
-					Body : mail["body"]
-				}).then(
-					message => alert(message)
-				);
-			}
-		</script>
 		<script src="assets/js/mail.js">
 		</script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -52,7 +29,7 @@
 						<!-- Content -->
 							<section id="content" class="main">
 								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-									<form method="post" onsubmit="sendEmail()">
+									<form method="post" action="mailto:marcussimmons13@gmail.com">
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall">
 												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
